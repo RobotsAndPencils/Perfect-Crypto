@@ -29,7 +29,7 @@ let package = Package(
     name: "PerfectCrypto",
     targets: [],
     dependencies: [
-		.Package(url: "https://github.com/RobotsAndPencils/Perfect.git", majorVersion: 2),
+		.Package(url: "https://github.com/RobotsAndPencils/Perfect.git", majorVersion: 3),
 		.Package(url: "https://github.com/PerfectlySoft/Perfect-Thread.git", majorVersion: 2),
 		.Package(url: cOpenSSLRepo, majorVersion: 2)
 	]
