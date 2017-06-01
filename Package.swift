@@ -20,9 +20,9 @@
 import PackageDescription
 
 #if os(Linux)
-	let cOpenSSLRepo = "https://github.com/PerfectlySoft/Perfect-COpenSSL-Linux.git"
+	let cOpenSSL = Package.Dependency.Package(url: "https://github.com/PerfectlySoft/Perfect-COpenSSL-Linux.git", majorVersion: 2)
 #else
-	let cOpenSSLRepo = "https://github.com/PerfectlySoft/Perfect-COpenSSL.git"
+	let cOpenSSL = Package.Dependency.Package(url: "https://github.com/RobotsAndPencils/Perfect-COpenSSL.git", majorVersion: 3)
 #endif
 
 let package = Package(
@@ -31,6 +31,6 @@ let package = Package(
     dependencies: [
 		.Package(url: "https://github.com/RobotsAndPencils/Perfect.git", majorVersion: 3),
 		.Package(url: "https://github.com/PerfectlySoft/Perfect-Thread.git", majorVersion: 2),
-		.Package(url: cOpenSSLRepo, majorVersion: 2)
+		cOpenSSL
 	]
 )
