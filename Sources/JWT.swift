@@ -136,8 +136,10 @@ public struct JWTCreator {
 	public func sign(alg: JWT.Alg, key: Key, headers: [String:Any] = [:]) throws -> String {
 		var useHeaders: [String:Any] = ["alg":alg.string, "typ":"JWT"]
 		headers.forEach {
-			key, value in
-			useHeaders[key] = value
+            (arg) in
+            
+            let (key, value) = arg
+            useHeaders[key] = value
 		}
 		let headerBytes = Array(try useHeaders.jsonEncodedString().utf8)
 		guard let h64 = headerBytes.encode(jwtEncoding),
